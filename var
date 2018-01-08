@@ -1,0 +1,9 @@
+service_account_email: kris-288@jenkins-191509.iam.gserviceaccount.com
+credentials_file: /etc/ansible/ssu/jenkins-f50f095667ee.json
+project_id: jenkins-191509 
+machine_type: n1-standard-1
+image: ubuntu-16
+
+
+
+

@@ -1,0 +1,24 @@
+---
+# tasks file for jenkins_run
+- git:
+    repo: 'https://github.com/krismal95/ssu_petClinic2.git'
+    dest: /tmp/ssu
+
+- name: Execute the command
+  shell: /tmp/ssu/install.sh
+
+- name: add a string to the new file
+  lineinfile: dest=/etc/default/jenkins
+    regexp='HTTP_PORT=8080'
+    line='HTTP_PORT=8090'
+    state=present
+
+#- name: Copy config jenkins
+#  become: yes
+#  sudo: yes
+#  copy: src=/tmp/ssu/config 
+#        dest=/tmp/ 
+#        directory_mode=yes 
+#        owner=jenkins
+#        group=jenkins 
+#        seuser=root
